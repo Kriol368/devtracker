@@ -27,12 +27,13 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     'Todos',
     'Java',
     'Spring Boot',
-    'ASP.NET',
     'Kotlin',
-    'Flutter',
+    'Ktor',
+    'Jetpack Compose',
     'PHP',
     'Symfony',
     'Python',
+    'Flutter',
   ];
 
   List<Project> get _filteredProjects {
@@ -59,7 +60,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     final filtered = _filteredProjects;
     final l10n = widget.localizations;
 
-    // Actualizar "Todos" si cambia el idioma
     if (_allTechnologies[0] != l10n.todos) {
       _allTechnologies[0] = l10n.todos;
     }
@@ -157,7 +157,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                     crossAxisCount: crossAxisCount,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    childAspectRatio: 1.15,
+                    childAspectRatio: 1.5,
                   ),
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {

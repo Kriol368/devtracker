@@ -16,39 +16,38 @@ class TimelineEvent {
 
 List<TimelineEvent> timelineEvents = [
   const TimelineEvent(
-    year: '2018',
-    title: 'Inicio en la Universidad',
-    description: 'Comencé Ingeniería Informática. Primer contacto con Java, C y fundamentos de programación.',
+    year: '2024',
+    title: 'Inicio en Desarrollo de Software',
+    description:
+    'Comienzo de la formación en desarrollo de software. Primer contacto con Java, programación orientada a objetos y fundamentos de desarrollo.',
     icon: Icons.school,
   ),
   const TimelineEvent(
-    year: '2020',
-    title: 'Primer Empleo como Desarrollador',
-    description: 'Empecé como desarrollador backend junior trabajando con Java y Spring Boot en una startup fintech.',
-    icon: Icons.work,
-  ),
-  const TimelineEvent(
-    year: '2021',
-    title: 'Stack Ampliado',
-    description: 'Aprendí PHP con Symfony y ASP.NET. Participé en proyectos de e-commerce y facturación electrónica.',
+    year: '2025',
+    title: 'Primeros Proyectos',
+    description:
+    'Desarrollo de Pokedex con Java Swing, SteamWave y Xenoblade 3 Checklist con Symfony, TrackTrails con Kotlin y Compose, y PJ Sekai Downloader con Python.',
     icon: Icons.rocket_launch,
   ),
   const TimelineEvent(
-    year: '2022',
-    title: 'Desarrollo Mobile',
-    description: 'Entré en el mundo mobile con Kotlin para Android y di mis primeros pasos con Flutter.',
-    icon: Icons.phone_android,
-  ),
-  const TimelineEvent(
-    year: '2023',
-    title: 'Full Stack Consolidado',
-    description: 'Proyectos combinando Flutter, Spring Boot, ASP.NET y Symfony. Arquitecturas de microservicios.',
+    year: '2025',
+    title: 'Desarrollo Full Stack',
+    description:
+    'Combinación de proyectos backend con Spring Boot y frontend con Jetpack Compose. Talos II Archive como proyecto full stack completo.',
     icon: Icons.layers,
   ),
   const TimelineEvent(
-    year: '2024',
-    title: 'Situación Actual',
-    description: 'Desarrollando DevTracker en Flutter Web. Buscando nuevas oportunidades como Full Stack Developer.',
-    icon: Icons.trending_up,
+    year: '2026',
+    title: 'Proyecto HairUp',
+    description:
+    'Desarrollo de HairUp, aplicación completa de gestión de peluquerías con backend en Kotlin/Ktor y app Android en Jetpack Compose.',
+    icon: Icons.phone_android,
+  ),
+  const TimelineEvent(
+    year: '2026',
+    title: 'Flutter y DevTracker',
+    description:
+    'Aprendizaje de Flutter y desarrollo de DevTracker, portfolio dashboard profesional. Consolidación como desarrollador full stack.',
+    icon: Icons.flutter_dash,
   ),
 ];

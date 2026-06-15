@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/project.dart';
 import '../l10n/app_localizations.dart';
 
@@ -124,7 +125,13 @@ class ProjectDetailPage extends StatelessWidget {
                   Row(
                     children: [
                       FilledButton.icon(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final uri = Uri.parse(project.githubUrl);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri,
+                                mode: LaunchMode.externalApplication);
+                          }
+                        },
                         icon: const Icon(Icons.open_in_browser),
                         label: Text(l10n.verEnGitHub),
                       ),
@@ -172,6 +179,8 @@ class ProjectDetailPage extends StatelessWidget {
         return Icons.language;
       case 'Tools':
         return Icons.terminal;
+      case 'Desktop':
+        return Icons.desktop_windows;
       default:
         return Icons.folder;
     }

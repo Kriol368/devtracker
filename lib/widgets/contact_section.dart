@@ -187,13 +187,13 @@ class _ContactSectionState extends State<ContactSection> {
                             _SocialLink(
                               icon: Icons.link,
                               label: 'LinkedIn',
-                              url: 'https://linkedin.com/in/andreu',
+                              url: 'https://www.linkedin.com/in/andreu-beltran-miralles-460698342',
                             ),
                             const SizedBox(width: 24),
                             _SocialLink(
                               icon: Icons.code,
                               label: 'GitHub',
-                              url: 'https://github.com/andreu',
+                              url: 'https://github.com/Kriol368',
                             ),
                           ],
                         ),

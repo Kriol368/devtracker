@@ -6,7 +6,6 @@ import '../widgets/hero_section.dart';
 import '../widgets/dashboard_section.dart';
 import '../widgets/projects_section.dart';
 import '../widgets/technology_section.dart';
-import '../widgets/timeline_section.dart';
 import '../widgets/contact_section.dart';
 import 'project_detail_page.dart';
 
@@ -36,7 +35,6 @@ class _HomePageState extends State<HomePage> {
     'Dashboard': GlobalKey(),
     'Proyectos': GlobalKey(),
     'Tecnologías': GlobalKey(),
-    'Timeline': GlobalKey(),
     'Contacto': GlobalKey(),
   };
 
@@ -61,7 +59,6 @@ class _HomePageState extends State<HomePage> {
       l10n.dashboard,
       l10n.proyectos,
       l10n.tecnologias,
-      l10n.timeline,
       l10n.contacto,
     ];
   }
@@ -72,7 +69,6 @@ class _HomePageState extends State<HomePage> {
     if (item == l10n.dashboard) return 'Dashboard';
     if (item == l10n.proyectos) return 'Proyectos';
     if (item == l10n.tecnologias) return 'Tecnologías';
-    if (item == l10n.timeline) return 'Timeline';
     if (item == l10n.contacto) return 'Contacto';
     return item;
   }
@@ -161,11 +157,6 @@ class _HomePageState extends State<HomePage> {
               Container(
                 key: _sectionKeys['Tecnologías'],
                 child: TechnologySection(localizations: l10n),
-              ),
-              // Timeline
-              Container(
-                key: _sectionKeys['Timeline'],
-                child: TimelineSection(localizations: l10n),
               ),
               // Contacto
               Container(

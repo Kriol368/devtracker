@@ -1,0 +1,1 @@
+ /home/kriol/StudioProjects/devtracker/.dart_tool/flutter_build/cb5d69616eb98e3cc4630052f8110a1f/native_assets.json: 

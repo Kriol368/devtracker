@@ -18,7 +18,7 @@ class TechnologySection extends StatelessWidget {
       builder: (context, constraints) {
         final isMobile = constraints.maxWidth < 600;
         final crossAxisCount =
-        isMobile ? 2 : (constraints.maxWidth < 900 ? 3 : 3);
+        isMobile ? 2 : (constraints.maxWidth < 900 ? 3 : 5);
 
         return Container(
           padding: EdgeInsets.symmetric(
@@ -48,9 +48,9 @@ class TechnologySection extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: isMobile ? 0.95 : 1.1,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 1.2,
                 ),
                 itemCount: technologies.length,
                 itemBuilder: (context, index) {
