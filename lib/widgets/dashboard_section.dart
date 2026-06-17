@@ -50,7 +50,7 @@ class DashboardSection extends StatelessWidget {
                   StatCard(
                     icon: Icons.work_history,
                     label: l10n.aniosExperiencia,
-                    value: 2,
+                    value: 1,
                   ),
                   StatCard(
                     icon: Icons.folder,

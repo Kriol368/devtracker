@@ -18,8 +18,8 @@ List<Project> projects = [
     name: 'HairUp Backend',
     description: 'API REST para app de peluquerías con Ktor',
     longDescription:
-    'Backend desarrollado con Kotlin y Ktor que sirve como API para la aplicación HairUp de gestión de peluquerías. Implementa autenticación JWT con Auth0, gestión de citas, catálogo de servicios, perfiles de peluqueros, salones y sistema de valoraciones. Base de datos PostgreSQL con Exposed ORM, migraciones con Flyway y conexiones con HikariCP.',
-    technologies: ['Kotlin', 'Ktor', 'PostgreSQL', 'Flyway', 'JWT'],
+    'Backend desarrollado con Kotlin y Ktor que sirve como API para la aplicación HairUp de gestión de peluquerías. Implementa autenticación JWT con Auth0, gestión de citas, catálogo de servicios, perfiles de peluqueros, salones y sistema de valoraciones. Base de datos MySQL con Exposed ORM, migraciones con Flyway y conexiones con HikariCP.',
+    technologies: ['Kotlin', 'Ktor', 'MySQL', 'Flyway', 'JWT'],
     date: DateTime(2026, 3, 15),
     category: 'Backend',
     githubUrl: 'https://github.com/Kriol368/hairup-backend',
@@ -42,8 +42,8 @@ List<Project> projects = [
     name: 'Talos II Archive Backend',
     description: 'API para archivo documental con Spring Boot',
     longDescription:
-    'Backend desarrollado con Kotlin y Spring Boot que sirve como API REST para el archivo documental del proyecto Talos II. Implementa Spring Security con JWT, JPA con PostgreSQL, migraciones Flyway y documentación con Swagger/OpenAPI. Gestiona documentos, metadatos y control de acceso por roles.',
-    technologies: ['Kotlin', 'Spring Boot', 'PostgreSQL', 'Swagger', 'JWT'],
+    'Backend desarrollado con Kotlin y Spring Boot que sirve como API REST para el archivo documental del proyecto Talos II. Implementa Spring Security con JWT, JPA con MySQL, migraciones Flyway y documentación con Swagger/OpenAPI. Gestiona documentos, metadatos y control de acceso por roles.',
+    technologies: ['Kotlin', 'Spring Boot', 'MySQL', 'Swagger', 'JWT'],
     date: DateTime(2026, 1, 20),
     category: 'Backend',
     githubUrl: 'https://github.com/Kriol368/talos-II-archive-backend',
@@ -100,10 +100,10 @@ List<Project> projects = [
   Project(
     id: '9',
     name: 'SteamWave',
-    description: 'Plataforma de ofertas de juegos con Symfony',
+    description: 'Red social para jugadores con integración de Steam',
     longDescription:
-    'Aplicación web desarrollada con PHP y Symfony que agrega ofertas de juegos desde múltiples tiendas. Incluye scraping de precios, alertas personalizadas, historial de precios con gráficos Chart.js, sistema de wishlist, notificaciones por email y panel de administración. Diseño responsive con Bootstrap, Stimulus y Webpack Encore.',
-    technologies: ['PHP', 'Symfony', 'MySQL', 'Bootstrap', 'Chart.js'],
+    'Aplicación web desarrollada con PHP y Symfony que funciona como red social para jugadores. Permite iniciar sesión con Steam, mostrar biblioteca de juegos, conectar con amigos, compartir logros y actividad de juego. Diseño responsive con Bootstrap, Stimulus y Webpack Encore.',
+    technologies: ['PHP', 'Symfony', 'MySQL', 'Bootstrap', 'Steam API'],
     date: DateTime(2025, 5, 22),
     category: 'Web',
     githubUrl: 'https://github.com/Kriol368/SteamWave',
