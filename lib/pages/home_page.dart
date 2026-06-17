@@ -29,6 +29,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late List<String> _navItems;
+  final ScrollController _scrollController = ScrollController();
 
   final Map<String, GlobalKey> _sectionKeys = {
     'Inicio': GlobalKey(),
@@ -42,6 +43,12 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _updateNavItems();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -77,11 +84,18 @@ class _HomePageState extends State<HomePage> {
     final baseKey = _getBaseKey(item);
     final key = _sectionKeys[baseKey];
     if (key?.currentContext != null) {
-      Scrollable.ensureVisible(
-        key!.currentContext!,
-        duration: const Duration(milliseconds: 600),
-        curve: Curves.easeInOut,
-      );
+      final renderObject = key!.currentContext!.findRenderObject();
+      if (renderObject != null) {
+        final offset = (renderObject as RenderBox).localToGlobal(
+          Offset.zero,
+          ancestor: context.findRenderObject(),
+        );
+        _scrollController.animateTo(
+          _scrollController.offset + offset.dy - 80,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeInOut,
+        );
+      }
     }
   }
 
@@ -117,6 +131,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       endDrawer: _buildMobileDrawer(context),
       body: CustomScrollView(
+        controller: _scrollController,
         slivers: [
           SliverPersistentHeader(
             pinned: true,
@@ -133,7 +148,6 @@ class _HomePageState extends State<HomePage> {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
-              // Inicio
               Container(
                 key: _sectionKeys['Inicio'],
                 child: HeroSection(
@@ -142,23 +156,19 @@ class _HomePageState extends State<HomePage> {
                   onScrollToContact: () => _scrollToSection(l10n.contacto),
                 ),
               ),
-              // Dashboard
               Container(
                 key: _sectionKeys['Dashboard'],
                 child: DashboardSection(localizations: l10n),
               ),
-              // Proyectos
               ProjectsSection(
                 sectionKey: _sectionKeys['Proyectos']!,
                 onProjectTap: _onProjectTap,
                 localizations: l10n,
               ),
-              // Tecnologías
               Container(
                 key: _sectionKeys['Tecnologías'],
                 child: TechnologySection(localizations: l10n),
               ),
-              // Contacto
               Container(
                 key: _sectionKeys['Contacto'],
                 child: ContactSection(localizations: l10n),

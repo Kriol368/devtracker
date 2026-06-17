@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 
 class ContactSection extends StatefulWidget {
@@ -236,7 +237,12 @@ class _SocialLinkState extends State<_SocialLink> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () async {
+          final uri = Uri.parse(widget.url);
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri, mode: LaunchMode.externalApplication);
+          }
+        },
         child: AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 150),
           style: TextStyle(
